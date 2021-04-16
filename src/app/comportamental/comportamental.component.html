@@ -1,0 +1,81 @@
+<h2>Observer Example with Countries</h2>
+<hr>
+
+<h5>Que hace/es?</h5>
+<p>
+    Los observables nos sirven para trabajar procesos asincronos y sincronos, y no necesariamente son peticiones http o consumo de apis,
+    pueden servir para cualquier trabajo que se quiera ejecutar y esperar una respuesta que no viene de forma instantanea, tambien
+    se pueden crear observables para estar pendientes de ciertos cambios y ser notificados cuando estos sucedan como contadores,
+    incrementadores, lapsos de tiempo etc.
+</p>
+
+<h5>Caracteristicas de calidad:</h5>
+<p>
+    La principal caracteristica de calidad que cobija este patron bajo mi criterio es la Fiabilidad, mas concretamente la disponibilidad 
+    siendo esta la capacidad del sistema o componente para estar operativo y accesible para su uso cuando se requiere. 
+    <br><br>
+    Adicionalmente la tolerancia a fallos haciendo referencia esta ultima a la capacidad que tiene el sistema para operar 
+    segun lo previsto en la presencia de fallos de software o hardware
+</p>
+
+<div class="row">
+    <div class="col">
+        <form (ngSubmit)="buscarSugerido(termino)" autocomplete="off">
+            <input type="text"
+                   name="termino"
+                   class="form-control"
+                   [(ngModel)]="termino"
+                   />
+        </form>
+    </div>
+</div>
+
+<ul *ngIf="mostrarSugerencias" class="list-group">
+    <li *ngFor="let pais of paisesSugeridos"
+    class="list-group-item list-group-item-action">
+        <a class="nav-link" [routerLink]="['/pais', pais.alpha2Code]">
+            {{ pais.name }}
+        </a>
+    </li>
+    <li class="list-group-item list-group-item-action"
+        (click)="buscarSugerido(termino)">
+        <a class="nav-link">
+            Buscar "{{ termino }}"
+        </a>
+    </li>
+</ul>
+
+<hr>
+
+<div *ngIf="hayError" class="alert alert-danger">
+    No se encontró nada con el termino {{ termino }}
+</div>
+
+<div *ngIf="paises.length > 0" class="row">
+    <table class="table table-hover animate__animated animate__fadeIn">
+        <thead>
+            <tr>
+                <th> # </th>
+                <th> Bandera </th>
+                <th> Nombre </th>
+                <th> Población </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pais of paises; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>
+                    <img class="small-flag" [src]="pais.flag" alt="country-flag">
+                </td>
+                <td>
+                    {{pais.capital}}, {{ pais.name }}
+                </td>
+                <td>
+                    {{ pais.population | number }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h5>Fuente de las caracteristicas: https://iso25000.com/index.php/normas-iso-25000/iso-25010?start=0</h5>
