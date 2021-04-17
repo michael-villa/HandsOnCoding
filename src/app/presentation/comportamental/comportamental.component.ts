@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Country } from '../interfaces/observer.interface';
-import { ObserverService } from '../services/observer.service';
+import { Country } from '../../application/dto/observer.dto';
+import { ObserverService } from '../../domain/service/observer.service';
 
 @Component({
   selector: 'app-comportamental',

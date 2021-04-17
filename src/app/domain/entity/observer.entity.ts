@@ -1,4 +1,10 @@
+import { Currency } from './currency.entity';
+import { Language } from './language.entity';
+import { RegionalBloc } from './regional-bloc.entity';
+import { Translations } from './translations.entity';
+
 export interface Country {
+    readonly _id?: string;
     name:           string;
     topLevelDomain: string[];
     alpha2Code:     string;
@@ -23,37 +29,4 @@ export interface Country {
     flag:           string;
     regionalBlocs:  RegionalBloc[];
     cioc:           string;
-}
-
-export interface Currency {
-    code:   string;
-    name:   string;
-    symbol: string;
-}
-
-export interface Language {
-    iso639_1:   string;
-    iso639_2:   string;
-    name:       string;
-    nativeName: string;
-}
-
-export interface RegionalBloc {
-    acronym:       string;
-    name:          string;
-    otherAcronyms: any[];
-    otherNames:    any[];
-}
-
-export interface Translations {
-    de: string;
-    es: string;
-    fr: string;
-    ja: string;
-    it: string;
-    br: string;
-    pt: string;
-    nl: string;
-    hr: string;
-    fa: string;
 }

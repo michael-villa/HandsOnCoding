@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { Country } from '../interfaces/observer.interface';
+import { Country } from '../../application/dto/observer.dto';
 
 @Injectable({
   providedIn: 'root'

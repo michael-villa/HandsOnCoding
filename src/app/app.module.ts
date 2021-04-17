@@ -5,10 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 
 
 import { AppComponent } from './app.component';
-import { CreacionalComponent } from './creacional/creacional.component';
-import { ComportamentalComponent } from './comportamental/comportamental.component';
-import { HomeComponent } from './home/home.component';
-import { EstructuralComponent } from './estructural/estructural.component';
+import { CreacionalComponent } from './presentation/creacional/creacional.component';
+import { ComportamentalComponent } from './presentation/comportamental/comportamental.component';
+import { HomeComponent } from './presentation/home/home.component';
+import { EstructuralComponent } from './presentation/estructural/estructural.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({

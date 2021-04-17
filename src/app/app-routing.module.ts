@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ComportamentalComponent } from './comportamental/comportamental.component';
-import { CreacionalComponent } from './creacional/creacional.component';
-import { EstructuralComponent } from './estructural/estructural.component';
-import { HomeComponent } from './home/home.component';
+import { ComportamentalComponent } from './presentation/comportamental/comportamental.component';
+import { CreacionalComponent } from './presentation/creacional/creacional.component';
+import { EstructuralComponent } from './presentation/estructural/estructural.component';
 
 const routes: Routes = [
   {path: 'Comportamental', component: ComportamentalComponent},

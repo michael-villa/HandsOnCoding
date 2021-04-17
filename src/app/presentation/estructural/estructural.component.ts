@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DecoratorPattern } from '../decorator-pattern/decorator-pattern';
+import { DecoratorPattern } from '../../infrastructure/data/module/decorator-pattern.module';
 
 @Component({
   selector: 'app-estructural',
